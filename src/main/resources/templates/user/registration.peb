@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{{ 'plugin/fontawesome-free/css/all.min.css' }}">
+    <link rel="stylesheet" href="plugin/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition register-page bg-white">
+
+    {# @pebvariable name="userModel" type="ru.hwru.stock.models.UserModel" #}
+
+
+<div class="register-box">
+    <div class="card card-outline card-primary">
+        <div class="card-header text-center">
+            <h1 href="" class="h1"><b>Пере</b>СВЕТ</h1>
+        </div>
+        <div class="card-body">
+            <p class="login-box-msg"></p>
+
+            <p style="color: red; font-size: 18px"> {% if message is not empty %}{{message}}{%endif%}</p>
+            <form action="/registration"  method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="name" value="{{ userModel.name }}"  placeholder="Имя">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-user"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" name="email" value="{{ userModel.email }}"  placeholder="Почта">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-envelope"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" name="password" value="{{ userModel.password }}"  placeholder="Пароль">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="password" class="form-control" name="confirmPassword" value="{{ userModel.confirmPassword }}"  placeholder="Повторите пароль">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                            <span class="fas fa-lock"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <div class="icheck-primary">
+                            <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                            <label for="agreeTerms">
+                                Принимаю <a href="#">условия</a>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary btn-block">Создать</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+
+            <a href="/user/login" class="text-center">У меня есть аккаунт</a>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="plugin/jquery/jquery.min.js"></script>
+<script src="plugin/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
