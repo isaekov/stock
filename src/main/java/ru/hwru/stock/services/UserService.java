@@ -81,7 +81,6 @@ public class UserService implements UserDetailsService {
 
         userRepository.saveAndFlush(user);
 
-
     }
 
     @Override
@@ -89,6 +88,7 @@ public class UserService implements UserDetailsService {
         System.out.println("Hello World");
         Optional<User> user = userRepository.findByEmail(username);
         if (user.isPresent()) {
+            System.out.println(user.get().getUsername());
             return user.get();
         }
 

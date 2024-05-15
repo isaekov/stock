@@ -64,22 +64,22 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return confirmEmail;
+        return true;
     }
 
     public UUID getId() {
@@ -169,7 +169,7 @@ public class User implements UserDetails {
     }
 
     public boolean isBan() {
-        return ban;
+        return true;
     }
 
     public User setBan(boolean ban) {
