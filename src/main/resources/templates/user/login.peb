@@ -4,23 +4,23 @@
 <html lang="ru">
 <head>
     <title>Content page 1</title>
-    <link rel="stylesheet" th:href="@{/plugin/fontawesome-free/css/all.min.css}">
-    <link rel="stylesheet" th:href="@{/plugin/icheck-bootstrap/icheck-bootstrap.min.css}">
-    <link rel="stylesheet" th:href="@{/dist/css/adminlte.min.css}">
+    <link rel="stylesheet" href="{{ 'plugin/fontawesome-free/css/all.min.css' }}">
+    <link rel="stylesheet" href="{{ 'plugin/icheck-bootstrap/icheck-bootstrap.min.css' }}">
+    <link rel="stylesheet" href="{{ 'dist/css/adminlte.min.css' }}">
 </head>
 <body class="hold-transition register-page bg-white">
 
 
 
 <div class="login-box">
-    <!-- /.login-logo -->
+
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
             <h1 class="h1"><b>Пере</b>СВЕТ</h1>
         </div>
         <div class="card-body">
             <p class="login-box-msg">Войдите в предприятие</p>
-
+            {{ SPRING_SECURITY_LAST_EXCEPTION.message }}
             <form action="/login" method="post">
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" placeholder="Почта">
@@ -71,7 +71,7 @@
 
 
 
-<script th:src="@{/plugin/jquery/jquery.min.js}"></script>
-<script th:src="@{/plugin/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script src="{/plugin/jquery/jquery.min.js}"></script>
+<script src="{/plugin/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

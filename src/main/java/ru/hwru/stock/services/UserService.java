@@ -64,6 +64,7 @@ public class UserService implements UserDetailsService {
             role
                     .setId(UUID.randomUUID())
                     .setRole(RoleEnum.ADMIN);
+            role = roleRepository.save(role);
         } else {
             role = roleOptional.get();
         }
@@ -85,10 +86,12 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        System.out.println("Hello World");
         Optional<User> user = userRepository.findByEmail(username);
         if (user.isPresent()) {
             return user.get();
         }
+
         throw new UsernameNotFoundException("Пользователь не найден");
     }
 }
